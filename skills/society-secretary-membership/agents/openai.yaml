@@ -1,0 +1,4 @@
+interface:
+  display_name: "학회 회원 관리"
+  short_description: "회원 구분과 명단 상태 갱신을 정리"
+  default_prompt: "Use $society-secretary-membership to update membership categories and registry fields using the documented rules."

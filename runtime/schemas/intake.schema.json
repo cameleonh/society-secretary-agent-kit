@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Society Secretary Intake",
+  "type": "object",
+  "required": [
+    "job_id",
+    "request_type",
+    "requested_by",
+    "goal",
+    "sources",
+    "constraints",
+    "approval_policy",
+    "created_at",
+    "notes"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "request_type": {
+      "type": "string",
+      "enum": [
+        "dues_reconciliation",
+        "membership_update",
+        "protocol_reconstruction",
+        "meeting_minutes",
+        "notice_draft",
+        "email_draft",
+        "multi_step_admin",
+        "unknown"
+      ]
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "path",
+          "label"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "approval_policy": {
+      "type": "object"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "job_id": "job-2026-04-12-001",
+  "request_type": "dues_reconciliation",
+  "requested_by": "society_secretary",
+  "goal": "2026 회비 입금 내역을 정리하고 회원 명단 반영안을 만든다.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "dues/2026/2026_bank_export_q1.xlsx",
+      "label": "primary_payment_export"
+    },
+    {
+      "type": "sheet",
+      "path": "members/2026/current_registry",
+      "label": "member_registry"
+    },
+    {
+      "type": "doc",
+      "path": "rules/2026_dues_policy.md",
+      "label": "dues_rule"
+    }
+  ],
+  "constraints": {
+    "target_period": "2026",
+    "preserve_original_files": true,
+    "allow_direct_write": false,
+    "route_registry_updates_through_membership_skill": true
+  },
+  "approval_policy": {
+    "require_human_approval_for_external_send": true,
+    "require_human_approval_for_money_or_status_changes": true,
+    "require_human_approval_for_sensitive_deletes": true
+  },
+  "created_at": "2026-04-12T01:45:00+09:00",
+  "notes": [
+    "first sample job for the harness",
+    "use dues then membership orchestration"
+  ]
+}

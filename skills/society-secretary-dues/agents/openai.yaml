@@ -1,0 +1,4 @@
+interface:
+  display_name: "학회 회비 정산"
+  short_description: "회비 내역 대조와 예외 거래 분류를 지원"
+  default_prompt: "Use $society-secretary-dues to reconcile dues records against the member registry and fee rules."

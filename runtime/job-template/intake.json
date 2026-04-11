@@ -1,0 +1,35 @@
+{
+  "job_id": "job-YYYY-MM-DD-001",
+  "request_type": "dues_reconciliation",
+  "requested_by": "chair_or_staff",
+  "goal": "Describe the operational goal here.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "dues/2026_bank_export.xlsx",
+      "label": "primary_input"
+    },
+    {
+      "type": "sheet",
+      "path": "members/current_registry",
+      "label": "registry"
+    },
+    {
+      "type": "doc",
+      "path": "rules/dues_policy_2026.md",
+      "label": "rule"
+    }
+  ],
+  "constraints": {
+    "target_period": "2026",
+    "preserve_original_files": true,
+    "allow_direct_write": false
+  },
+  "approval_policy": {
+    "require_human_approval_for_external_send": true,
+    "require_human_approval_for_money_or_status_changes": true,
+    "require_human_approval_for_sensitive_deletes": true
+  },
+  "created_at": "2026-04-12T00:00:00+09:00",
+  "notes": []
+}

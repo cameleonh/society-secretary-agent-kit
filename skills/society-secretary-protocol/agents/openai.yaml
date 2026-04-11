@@ -1,0 +1,4 @@
+interface:
+  display_name: "학회 운영 프로토콜"
+  short_description: "과거 기록 기반 SOP와 연간 체크리스트 작성"
+  default_prompt: "Use $society-secretary-protocol to reconstruct a current-year operating protocol from historical society records."

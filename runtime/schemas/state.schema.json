@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Society Secretary State",
+  "type": "object",
+  "required": [
+    "job_id",
+    "current_status",
+    "current_step",
+    "current_skill",
+    "last_completed_step",
+    "next_skill",
+    "request_type",
+    "review_queue_count",
+    "approval_queue_count",
+    "artifacts",
+    "errors",
+    "updated_at"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "received",
+        "classified",
+        "planned",
+        "running",
+        "waiting_for_review",
+        "waiting_for_approval",
+        "completed",
+        "failed"
+      ]
+    },
+    "current_step": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "current_skill": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_completed_step": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "next_skill": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "request_type": {
+      "type": "string"
+    },
+    "review_queue_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "approval_queue_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

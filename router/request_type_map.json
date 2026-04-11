@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "request_types": [
+    {
+      "request_type": "dues_reconciliation",
+      "primary_skill": "society-secretary-dues",
+      "planned_skills": [
+        "society-secretary-dues"
+      ],
+      "action_keywords": [
+        "대조",
+        "비교",
+        "정산",
+        "reconcile",
+        "normalize",
+        "classify payments"
+      ],
+      "object_keywords": [
+        "회비",
+        "입금내역",
+        "납부내역",
+        "오입금",
+        "중복입금",
+        "bank export"
+      ],
+      "output_keywords": [
+        "정산표",
+        "대조표",
+        "오입금 목록",
+        "회비 반영안"
+      ],
+      "source_extensions": [
+        ".csv",
+        ".xlsx",
+        ".xls"
+      ],
+      "needs_planner": false
+    },
+    {
+      "request_type": "membership_update",
+      "primary_skill": "society-secretary-membership",
+      "planned_skills": [
+        "society-secretary-membership"
+      ],
+      "action_keywords": [
+        "업데이트",
+        "갱신",
+        "반영",
+        "태깅",
+        "merge"
+      ],
+      "object_keywords": [
+        "회원 명단",
+        "회원구분",
+        "연락처 변경",
+        "소속 변경",
+        "휴면 회원",
+        "미납 상태"
+      ],
+      "output_keywords": [
+        "회원 명단 업데이트안",
+        "회원구분 정리",
+        "상태 갱신안"
+      ],
+      "source_extensions": [
+        ".csv",
+        ".xlsx",
+        ".xls"
+      ],
+      "needs_planner": false
+    },
+    {
+      "request_type": "protocol_reconstruction",
+      "primary_skill": "society-secretary-protocol",
+      "planned_skills": [
+        "society-secretary-protocol"
+      ],
+      "action_keywords": [
+        "프로토콜",
+        "SOP",
+        "인수인계",
+        "복원",
+        "재구성",
+        "작년 메일 읽고 정리"
+      ],
+      "object_keywords": [
+        "운영 절차",
+        "연간 일정",
+        "운영 기록",
+        "작년 이메일"
+      ],
+      "output_keywords": [
+        "운영 프로토콜",
+        "월별 체크리스트",
+        "연간 운영 캘린더",
+        "인수인계 문서"
+      ],
+      "source_extensions": [
+        ".eml",
+        ".md",
+        ".docx",
+        ".pdf"
+      ],
+      "needs_planner": false
+    },
+    {
+      "request_type": "meeting_minutes",
+      "primary_skill": "society-secretary-meeting-comms",
+      "planned_skills": [
+        "society-secretary-meeting-comms"
+      ],
+      "action_keywords": [
+        "회의록",
+        "안건",
+        "정리",
+        "액션아이템",
+        "minutes",
+        "agenda"
+      ],
+      "object_keywords": [
+        "회의자료",
+        "결정사항",
+        "위원회 회의",
+        "운영위원회"
+      ],
+      "output_keywords": [
+        "회의록",
+        "안건표",
+        "결정사항 정리",
+        "액션아이템 정리"
+      ],
+      "source_extensions": [
+        ".md",
+        ".docx",
+        ".txt"
+      ],
+      "needs_planner": false
+    },
+    {
+      "request_type": "notice_draft",
+      "primary_skill": "society-secretary-meeting-comms",
+      "planned_skills": [
+        "society-secretary-meeting-comms"
+      ],
+      "action_keywords": [
+        "공지문",
+        "안내문",
+        "공고",
+        "announcement",
+        "notice"
+      ],
+      "object_keywords": [
+        "회원 안내",
+        "행사 안내",
+        "일정 공지"
+      ],
+      "output_keywords": [
+        "공지문",
+        "안내문",
+        "배포용 공지"
+      ],
+      "source_extensions": [
+        ".md",
+        ".docx",
+        ".pdf"
+      ],
+      "needs_planner": false
+    },
+    {
+      "request_type": "email_draft",
+      "primary_skill": "society-secretary-meeting-comms",
+      "planned_skills": [
+        "society-secretary-meeting-comms"
+      ],
+      "action_keywords": [
+        "메일 초안",
+        "이메일 초안",
+        "회신",
+        "리마인드 메일",
+        "보고 메일",
+        "reply draft",
+        "reminder email"
+      ],
+      "object_keywords": [
+        "위원장 메일",
+        "회원 메일",
+        "회장 보고"
+      ],
+      "output_keywords": [
+        "메일 초안",
+        "회신 초안",
+        "리마인드 메일"
+      ],
+      "source_extensions": [
+        ".md",
+        ".docx",
+        ".txt",
+        ".eml"
+      ],
+      "needs_planner": false
+    },
+    {
+      "request_type": "multi_step_admin",
+      "primary_skill": "planner",
+      "planned_skills": [],
+      "patterns": [
+        {
+          "name": "dues_then_membership",
+          "if_all": [
+            "회비",
+            "회원 명단"
+          ],
+          "route": [
+            "society-secretary-dues",
+            "society-secretary-membership"
+          ]
+        },
+        {
+          "name": "protocol_then_comms",
+          "if_all": [
+            "작년 메일",
+            "프로토콜",
+            "공지"
+          ],
+          "route": [
+            "society-secretary-protocol",
+            "society-secretary-meeting-comms"
+          ]
+        }
+      ],
+      "needs_planner": true
+    },
+    {
+      "request_type": "unknown",
+      "primary_skill": null,
+      "planned_skills": [],
+      "needs_planner": true
+    }
+  ]
+}

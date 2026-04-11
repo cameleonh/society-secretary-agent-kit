@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Society Secretary Plan",
+  "type": "object",
+  "required": [
+    "job_id",
+    "plan_version",
+    "stages",
+    "updated_at"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "plan_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "order",
+          "skill",
+          "status",
+          "goal",
+          "input_sources",
+          "outputs_expected",
+          "stop_if",
+          "handoff_to"
+        ],
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "skill": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "running",
+              "completed",
+              "failed",
+              "skipped"
+            ]
+          },
+          "goal": {
+            "type": "string"
+          },
+          "input_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outputs_expected": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "stop_if": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "handoff_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

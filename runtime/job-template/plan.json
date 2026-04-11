@@ -1,0 +1,47 @@
+{
+  "job_id": "job-YYYY-MM-DD-001",
+  "plan_version": 1,
+  "stages": [
+    {
+      "order": 1,
+      "skill": "society-secretary-dues",
+      "status": "pending",
+      "goal": "Normalize dues records and classify rows.",
+      "input_sources": [
+        "dues/2026_bank_export.xlsx",
+        "members/current_registry",
+        "rules/dues_policy_2026.md"
+      ],
+      "outputs_expected": [
+        "artifacts/dues_reconciled.xlsx",
+        "review/review_items.md",
+        "approval/approval_items.md"
+      ],
+      "stop_if": [
+        "rule_missing",
+        "source_missing",
+        "approval_required_before_next_stage"
+      ],
+      "handoff_to": "society-secretary-membership"
+    },
+    {
+      "order": 2,
+      "skill": "society-secretary-membership",
+      "status": "pending",
+      "goal": "Reflect confirmed dues results into the member registry proposal.",
+      "input_sources": [
+        "artifacts/dues_reconciled.xlsx",
+        "members/current_registry"
+      ],
+      "outputs_expected": [
+        "artifacts/membership_update_proposal.xlsx"
+      ],
+      "stop_if": [
+        "review_items_unresolved",
+        "approval_required_before_write"
+      ],
+      "handoff_to": null
+    }
+  ],
+  "updated_at": "2026-04-12T00:00:00+09:00"
+}

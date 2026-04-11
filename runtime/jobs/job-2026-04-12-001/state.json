@@ -1,0 +1,14 @@
+{
+  "job_id": "job-2026-04-12-001",
+  "current_status": "planned",
+  "current_step": 0,
+  "current_skill": null,
+  "last_completed_step": 0,
+  "next_skill": "society-secretary-dues",
+  "request_type": "dues_reconciliation",
+  "review_queue_count": 0,
+  "approval_queue_count": 0,
+  "artifacts": [],
+  "errors": [],
+  "updated_at": "2026-04-12T01:45:00+09:00"
+}

@@ -1,0 +1,20 @@
+# Local job state
+runtime/jobs/*
+!runtime/jobs/README.md
+!runtime/jobs/job-2026-04-12-001/
+!runtime/jobs/job-2026-04-12-001/**
+
+# Generated artifacts
+runtime/jobs/**/artifacts/*.xlsx
+runtime/jobs/**/artifacts/*.csv
+runtime/jobs/**/artifacts/*.pdf
+runtime/jobs/**/artifacts/*.docx
+
+# User-specific editor and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,4 @@
+interface:
+  display_name: "학회 회의와 공지"
+  short_description: "회의록, 공지, 메일 초안 작성을 지원"
+  default_prompt: "Use $society-secretary-meeting-comms to turn meeting materials into agendas, minutes, and official communication drafts."
