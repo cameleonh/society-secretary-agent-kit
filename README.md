@@ -1,5 +1,10 @@
 # Society Secretary Agent Kit
 
+<!-- project-summary -->
+> **What this is:** Starter kit for society secretary agents with reusable skills, runtime templates, routing rules, and operating documents.
+<!-- /project-summary -->
+
+
 Operational starter kit for a society secretary agent.
 
 This repository gives you two layers:
