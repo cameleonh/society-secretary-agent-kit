@@ -2,6 +2,7 @@
 
 <!-- project-summary -->
 > **What this is:** Starter kit for society secretary agents with reusable skills, runtime templates, routing rules, and operating documents.
+> **한국어:** 학회 총무 에이전트를 만들기 위한 재사용 스킬, 런타임 템플릿, 라우팅 규칙, 운영 문서 스타터킷입니다.
 <!-- /project-summary -->
 
 
